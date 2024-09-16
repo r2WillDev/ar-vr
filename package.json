@@ -1,0 +1,14 @@
+{
+  "name": "ar-vr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-ar": "node ./proj-ar/index.js",
+    "start-vr": "node ./proj-vr/index.js"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
