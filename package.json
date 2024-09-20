@@ -6,7 +6,6 @@
   "scripts": {
     "start-ar": "node ./proj-ar/index.js",
     "start-vr": "node ./proj-vr/index.js"
-    
   },
   "keywords": [],
   "author": "",
