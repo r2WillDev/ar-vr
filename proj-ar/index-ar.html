@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museu Brasileiro - AR (Debug)</title>
+    <title>Museu Brasileiro - AR</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <style>
@@ -37,18 +37,49 @@
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
         <a-assets>
-            <img id="quadro1" src="./assets/Abaporu.jpg">
-            <img id="quadro2" src="./assets/Batalha-do-avai.jpg">
-            <img id="quadro3" src="./assets/Lavrador-de-cafe.jpg">
-            <img id="quadro4" src="./assets/Samba.jpg">
+            <img id="quadro1" src="./assets/Abaporu.jpg" alt="Abaporu">
+            <img id="quadro2" src="./assets/Batalha-do-avai.jpg" alt="Batalha do Avaí">
+            <img id="quadro3" src="./assets/Lavrador-de-cafe.jpg" alt="Lavrador de Café">
+            <img id="quadro4" src="./assets/Samba.jpg" alt="Samba">
+            <img id="quadro5" src="./assets/Ciclistas.jpg" alt="Ciclistas">
+            <img id="quadro6" src="./assets/Ogiva, de Alfredo Volpi.jpg" alt="Ogiva">
+            <img id="quadro7" src="./assets/Operários, de Tarsila do Amaral.jpg" alt="Operários">
+            <img id="quadro8" src="./assets/Os Retirantes, de Cândido Portinari.jpg" alt="Os Retirantes">
         </a-assets>
 
         <a-marker preset="hiro" emitevents="true" id="marker-hiro">
-            <a-box position="0 0.5 0" material="color: red;"></a-box>
-            <a-plane position="0 0.5 0" rotation="-90 0 0" width="1" height="1.5" material="src: #quadro1"></a-plane>
-            <a-plane position="1.5 0.5 0" rotation="-90 0 0" width="1" height="1.5" material="src: #quadro2"></a-plane>
-            <a-plane position="3 0.5 0" rotation="-90 0 0" width="1" height="1.5" material="src: #quadro3"></a-plane>
-            <a-plane position="4.5 0.5 0" rotation="-90 0 0" width="1" height="1.5" material="src: #quadro4"></a-plane>
+            <!-- Quadro 1 -->
+            <a-plane position="-1 1 0" rotation="0 0 0" width="1.5" height="1.5" material="src: #quadro1"></a-plane>
+            <a-text value="Abaporu - Tarsila do Amaral" position="-1 0.2 0" align="center" width="2"></a-text>
+
+            <!-- Quadro 2 -->
+            <a-plane position="1 1 0" rotation="0 0 0" width="1.5" height="1.5" material="src: #quadro2"></a-plane>
+            <a-text value="Batalha do Avaí - Pedro Américo" position="1 0.2 0" align="center" width="2"></a-text>
+
+            <!-- Quadro 3 -->
+            <a-plane position="-3 1 -2" rotation="0 45 0" width="1.5" height="1.5" material="src: #quadro3"></a-plane>
+            <a-text value="Lavrador de Café - Portinari" position="-3 0.2 -2" align="center" width="2"></a-text>
+
+            <!-- Quadro 4 -->
+            <a-plane position="3 1 -2" rotation="0 -45 0" width="1.5" height="1.5" material="src: #quadro4"></a-plane>
+            <a-text value="Samba - Di Cavalcanti" position="3 0.2 -2" align="center" width="2"></a-text>
+
+            <!-- Quadro 5 -->
+            <a-plane position="3 1 -2" rotation="0 -45 0" width="1.5" height="1.5" material="src: #quadro5"></a-plane>
+            <a-text value="Ciclistas - Iberê Camargo" position="3 0.2 -2" align="center" width="2"></a-text>
+
+            <!-- Quadro 6 -->
+            <a-plane position="3 1 -2" rotation="0 -45 0" width="1.5" height="1.5" material="src: #quadro6"></a-plane>
+            <a-text value="Ogiva - Alfredo Volpi" position="3 0.2 -2" align="center" width="2"></a-text>
+
+            <!-- Quadro 7 -->
+            <a-plane position="3 1 -2" rotation="0 -45 0" width="1.5" height="1.5" material="src: #quadro7"></a-plane>
+            <a-text value="Operários - Tarsila do Amaral" position="3 0.2 -2" align="center" width="2"></a-text>
+
+            <!-- Quadro 8 -->
+            <a-plane position="3 1 -2" rotation="0 -45 0" width="1.5" height="1.5" material="src: #quadro8"></a-plane>
+            <a-text value="Os Retirantes - Candido Portinari" position="3 0.2 -2" align="center" width="2"></a-text>
+
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -56,10 +87,25 @@
 
     <script>
         const marker = document.querySelector("#marker-hiro");
+        const loader = document.querySelector('.arjs-loader');
+
         marker.addEventListener('markerFound', () => {
             console.log('Marcador Hiro detectado');
-            document.querySelector('.arjs-loader').style.display = 'none';
+            loader.style.display = 'none';
         });
+
+        marker.addEventListener('markerLost', () => {
+            console.log('Marcador Hiro perdido');
+            loader.style.display = 'flex';
+        });
+
+        window.addEventListener('error', (event) => {
+            console.error('Erro detectado:', event.message);
+        });
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert('Seu dispositivo não suporta AR/WebXR.');
+        }
     </script>
 </body>
 </html>
