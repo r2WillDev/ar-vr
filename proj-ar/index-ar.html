@@ -35,6 +35,8 @@
         <div>Carregando, por favor aguarde...</div>
     </div>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
     <a-scene embedded arjs="sourceType: webcam; trackingMethod: best ; debugUIEnabled: false;" vr-mode-ui="enabled: false">
         <a-assets>
 
@@ -56,55 +58,55 @@
 
         <!-- Quadros na frente -->
         <a-marker type="pattern" url="./assets/arquivo-patt/Youtube-ar.patt"><!-- coloquei o caminho da pasta aonde está o arquivo patt. O caminho antigo é "./assets/youtube-ar.patt"-->
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro1"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro1"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Twitter-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro2"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro2"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/AirBNB-ar.patt">            
             <!-- Quadros do lado direito -->
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro3" ></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro3" ></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Apple-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro4" ></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro4" ></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Adobe-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro5" ></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro5" ></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Ibooks-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro9" ></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro9" ></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Xbox-ar.patt">
-            <a-image pposition="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro11" ></a-image>
+            <a-image pposition="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro11" ></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Google-ar.patt"> 
             <!-- Quadros do lado esquerdo -->
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro6"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro6"></a-image>
         </a-marker>
         <a-marker type="pattern" url="./assets/arquivo-patt/Facebook-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro7"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro7"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Instagram-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro8"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro8"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/Uber-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro10"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro10"></a-image>
         </a-marker>
 
         <a-marker type="pattern" url="./assets/arquivo-patt/amazon-ar.patt">
-            <a-image position="0 0 1" rotation="-90 0 0" width="10"  height="10" material="src: #quadro13"></a-image>
+            <a-image position="0 -2 1" rotation="-90 0 0" width="2.5"  height="2.5" material="src: #quadro13"></a-image>
         </a-marker>
 
-        <a-entity camera position="0 1.6 0"></a-entity>
+        <a-entity camera position="0 0 0"></a-entity>
     </a-scene>
 
     <script>
